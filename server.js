@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const port = 3000; // Make sure it matches with the port on railway if any
-
+// Handle GET requests to the root URL
 app.get("/", function (req, res) {
   res.send("Server running");
 });
 
 // Webhook endpoint
+// Handle POST requests to specific URLs i.e. webhook endpoints
 app.post("/webhook", (req, res) => {
   console.log("Received webhook:", req.body);
 
@@ -31,6 +32,7 @@ app.use((err, req, res, next) => {
   return res.status(500).send("Internal Server Error");
 });
 
+// Start the server and listen for incoming connections
 app.listen(port, () => {
   console.log("App started succesfully");
 });
