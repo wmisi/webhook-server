@@ -8,7 +8,7 @@ app.get("/", function (req, res) {
 
 // Webhook endpoint
 // Handle POST requests to specific URLs i.e. webhook endpoints
-app.post("/webhooks/stripe", (req, res) => {
+app.post("https://gada/ai/webhooks/stripe", (req, res) => {
   console.log("Received webhook:", req.body);
 
   // Additional webhook handling logic
